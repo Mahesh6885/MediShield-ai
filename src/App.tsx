@@ -9,10 +9,13 @@ import Inventory from "./pages/Inventory";
 import Suppliers from "./pages/Suppliers";
 import Assistant from "./pages/Assistant";
 import Reports from "./pages/Report";
+import Notification from "./pages/Notification";
+import Profile from "./pages/Profile";
+import Settings from "./pages/Settings";
 
-export default function App(){
+export default function App() {
 
-  return(
+  return (
 
     <BrowserRouter>
 
@@ -20,20 +23,23 @@ export default function App(){
 
         <Routes>
 
-          <Route path="/" element={<Dashboard/>}/>
+          <Route path="/" element={<Dashboard />} />
 
-          <Route path="/medicines" element={<Medicines/>}/>
+          <Route path="/medicines" element={<Medicines />} />
 
-          <Route path="/prediction" element={<Prediction/>}/>
+          <Route path="/prediction" element={<Prediction />} />
 
-          <Route path="/inventory" element={<Inventory/>}/>
+          <Route path="/inventory" element={<Inventory />} />
 
-          <Route path="/suppliers" element={<Suppliers/>}/>
+          <Route path="/suppliers" element={<Suppliers />} />
 
-          <Route path="/assistant" element={<Assistant/>}/>
+          <Route path="/assistant" element={<Assistant />} />
 
-          <Route path="/reports" element={<Reports/>}/>
+          <Route path="/reports" element={<Reports />} />
 
+          <Route path="/notifications" element={<Notification />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/settings" element={<Settings />} />
         </Routes>
 
       </Layout>

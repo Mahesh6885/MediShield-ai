@@ -1,0 +1,18 @@
+% Table 7: Inventory Policy Simulation Comparison (180 Days, 5 Seeds)
+% Generated programmatically from results/inventory_comparison.csv
+\begin{table}[htbp]
+\centering
+\caption{Inventory Policy Simulation Comparison Across 5 Random Seeds (180-Day Horizon)}
+\label{tab:inventory_comparison}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Policy} & \textbf{Stockout Days} & \textbf{Stockout Rate} & \textbf{Service Level} & \textbf{Total Cost (\$)} \\
+\midrule
+Conventional Baseline & 0.0 $\pm$ 0.00 & 0.00\% $\pm$ 0.00\% & 100.00\% $\pm$ 0.00\% & \$1699.64 $\pm$ \$22.63 \\
+Proposed Risk-Aware & 0.2 $\pm$ 0.45 & 0.11\% $\pm$ 0.25\% & 99.90\% $\pm$ 0.22\% & \$1676.58 $\pm$ \$16.62 \\
+\bottomrule
+\end{tabular}
+\begin{flushleft}
+\small Note: Proposed policy yields a 1.36\% cost reduction via dynamic buffer adjustments, maintaining a 99.90\% service level (0.2 days stockout vs 0.0 days baseline).
+\end{flushleft}
+\end{table}

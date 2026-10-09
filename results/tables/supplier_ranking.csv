@@ -1,0 +1,7 @@
+id,name,quality,reliability,delivery,cost,norm_reliability,norm_quality,norm_cost,norm_delivery,composite_score,rank
+1,Sun Pharma,95,98,2,120.0,1.0,1.0,0.0,1.0,80.0,1
+2,Cipla,92,95,3,110.0,0.7,0.625,0.4,0.6667,61.25,2
+4,Apollo Pharma,91,94,3,112.0,0.6,0.5,0.32,0.6667,52.4,3
+3,Dr. Reddy's,90,93,4,105.0,0.5,0.375,0.6,0.3333,45.75,4
+5,Aurobindo,88,89,5,95.0,0.1,0.125,1.0,0.0,27.25,5
+6,Mankind,87,88,4,100.0,0.0,0.0,0.8,0.3333,21.0,6

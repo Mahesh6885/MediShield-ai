@@ -1,0 +1,28 @@
+% Table 4: Confusion Matrix & Derived Metrics (Seed 42, Held-Out Test Set)
+% Generated programmatically from results/confusion_matrix.json
+\begin{table}[htbp]
+\centering
+\caption{Confusion Matrix & Derived Metrics on Seed 42 Held-Out Test Set ($N = 1000$)}
+\label{tab:confusion_matrix}
+\begin{tabular}{lccr}
+\toprule
+& \textbf{Pred. No Shortage (0)} & \textbf{Pred. Shortage (1)} & \textbf{Row Total} \\
+\midrule
+\textbf{Actual No Shortage (0)} & $\text{TN} = 388$ & $\text{FP} = 11$ & $399$ (97.24\% Specificity) \\
+\textbf{Actual Shortage (1)}    & $\text{FN} = 9$ & $\text{TP} = 592$ & $601$ (98.50\% Sensitivity) \\
+\midrule
+\textbf{Column Total}           & $397$            & $603$            & $N = 1000$ \\
+\bottomrule
+\end{tabular}
+\vspace{2mm}
+\begin{tabular}{ll|ll}
+\toprule
+\textbf{Metric} & \textbf{Value} & \textbf{Metric} & \textbf{Value} \\
+\midrule
+Accuracy & 0.9800 (98.00\%) & Balanced Accuracy & 0.9787 (97.87\%) \\
+Precision & 0.9818 (98.18\%) & Specificity & 0.9724 (97.24\%) \\
+Recall (Sensitivity) & 0.9850 (98.50\%) & F1-Score & 0.9834 \\
+ROC-AUC & 0.9987 & PR-AUC & 0.9992 \\
+\bottomrule
+\end{tabular}
+\end{table}

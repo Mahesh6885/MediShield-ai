@@ -1,0 +1,23 @@
+{
+  "deterministic_scenarios_evaluation": {
+    "num_scenarios": 9,
+    "scenarios_description": "9 deterministic single-criterion +/-20% perturbation bounds",
+    "mean_kendall_tau": 1.0,
+    "min_kendall_tau": 1.0,
+    "mean_spearman_rho": 1.0,
+    "top_supplier_nominal": "Sun Pharma",
+    "top_supplier_stability_rate": 100.0
+  },
+  "monte_carlo_200_trials_evaluation": {
+    "num_trials": 200,
+    "perturbation_range": "+/- 20%",
+    "random_seed": 42,
+    "top_supplier_nominal": "Sun Pharma",
+    "top_supplier_stability_rate_pct": 100.0,
+    "mean_kendall_tau": 1.0,
+    "std_kendall_tau": 0.0,
+    "min_kendall_tau": 1.0,
+    "mean_spearman_rho": 1.0,
+    "std_spearman_rho": 0.0
+  }
+}

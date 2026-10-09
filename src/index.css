@@ -6,3 +6,35 @@ body{
   background:#f1f5f9;
   font-family:Inter,Arial,sans-serif;
 }
+.dark body{
+  background:#0F172A;
+  color:#F8FAFC;
+}
+
+.dark .bg-white{
+  background:#1E293B !important;
+}
+
+.dark .shadow-md,
+.dark .shadow-lg,
+.dark .shadow-xl{
+  box-shadow:0 5px 20px rgba(0,0,0,.35);
+}
+
+.dark input{
+  background:#1E293B;
+  color:white;
+}
+
+.dark table{
+  background:#1E293B;
+}
+
+.dark th{
+  background:#0F766E;
+  color:white;
+}
+
+.dark td{
+  color:#E2E8F0;
+}

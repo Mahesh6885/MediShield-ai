@@ -1,0 +1,77 @@
+{
+  "source": "Synthetic medicine-shortage dataset generated using a domain-informed supply-chain risk formulation.",
+  "scientific_integrity_notice": "Synthetically generated benchmark dataset. Not derived from clinical hospital EHR or confidential pharmaceutical firm databases.",
+  "generation_method": "Deterministic pseudo-random uniform feature sampling with domain-informed linear composite scoring.",
+  "seed": 42,
+  "number_of_records": 5000,
+  "features": [
+    "inventory",
+    "demand",
+    "lead_time",
+    "supplier_reliability",
+    "expiry_days",
+    "safety_stock"
+  ],
+  "sampling_specifications": {
+    "inventory": {
+      "low": 5,
+      "high": 200,
+      "unit": "units",
+      "desc": "Current physical stock on hand"
+    },
+    "demand": {
+      "low": 20,
+      "high": 220,
+      "unit": "units/month",
+      "desc": "Monthly forecasted demand"
+    },
+    "lead_time": {
+      "low": 1,
+      "high": 8,
+      "unit": "days",
+      "desc": "Replenishment lead time in days"
+    },
+    "supplier_reliability": {
+      "low": 60,
+      "high": 99,
+      "unit": "%",
+      "desc": "Supplier historical fulfillment rate"
+    },
+    "expiry_days": {
+      "low": 15,
+      "high": 365,
+      "unit": "days",
+      "desc": "Days remaining until product expiration"
+    },
+    "safety_stock": {
+      "low": 5,
+      "high": 25,
+      "unit": "units",
+      "desc": "Designated safety buffer stock"
+    }
+  },
+  "label_generation_rule": {
+    "formula": "score = 0.45*demand - 0.35*inventory + 8.0*lead_time - 0.30*supplier_reliability - 0.05*expiry_days - 2.0*safety_stock",
+    "safety_stock_coefficient": -2.0,
+    "threshold": -20.0,
+    "decision_rule": "shortage = 1 if score > -20.0 else 0",
+    "domain_correction_rationale": "Safety stock coefficient is negative (-2.0), reflecting its protective buffer role in mitigating stockout risk."
+  },
+  "class_distribution": {
+    "no_shortage_0": {
+      "count": 1996,
+      "percentage": 39.92
+    },
+    "shortage_1": {
+      "count": 3004,
+      "percentage": 60.08
+    }
+  },
+  "score_statistics": {
+    "mean": -8.6977,
+    "std": 40.6198,
+    "min": -130.65,
+    "max": 116.1
+  },
+  "generation_date_utc": "2026-10-06T14:30:26.214256+00:00"
+}

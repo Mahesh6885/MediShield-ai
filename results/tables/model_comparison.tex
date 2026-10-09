@@ -1,0 +1,21 @@
+% Table 2: Performance Comparison Across Models (Seeds 0-4)
+% Generated programmatically from results/model_comparison.json
+\begin{table*}[htbp]
+\centering
+\caption{Performance Comparison Across Models on Stratified 80/20 Test Splits (Mean $\pm$ Std over Seeds 0--4)}
+\label{tab:model_comparison}
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Model} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} & \textbf{ROC-AUC} & \textbf{PR-AUC} \\
+\midrule
+Logistic Regression & 0.9974 $\pm$ 0.0015 & 0.9977 $\pm$ 0.0025 & 0.9980 $\pm$ 0.0014 & 0.9978 $\pm$ 0.0013 & 1.0000 $\pm$ 0.0000 & 1.0000 $\pm$ 0.0000 \\
+Decision Tree & 0.8758 $\pm$ 0.0061 & 0.8950 $\pm$ 0.0056 & 0.8988 $\pm$ 0.0089 & 0.8969 $\pm$ 0.0053 & 0.9414 $\pm$ 0.0066 & 0.9542 $\pm$ 0.0072 \\
+Random Forest & 0.9338 $\pm$ 0.0063 & 0.9283 $\pm$ 0.0095 & 0.9644 $\pm$ 0.0062 & 0.9460 $\pm$ 0.0049 & 0.9867 $\pm$ 0.0017 & 0.9913 $\pm$ 0.0013 \\
+XGBoost (Default, Raw) & 0.9668 $\pm$ 0.0040 & 0.9674 $\pm$ 0.0041 & 0.9777 $\pm$ 0.0055 & 0.9725 $\pm$ 0.0033 & 0.9962 $\pm$ 0.0007 & 0.9975 $\pm$ 0.0005 \\
+XGBoost (Our Model: Eng + Tuned) & 0.9750 $\pm$ 0.0044 & 0.9762 $\pm$ 0.0041 & 0.9824 $\pm$ 0.0045 & 0.9793 $\pm$ 0.0036 & 0.9980 $\pm$ 0.0004 & 0.9987 $\pm$ 0.0002 \\
+\bottomrule
+\end{tabular}
+\begin{flushleft}
+\small Note: Logistic Regression achieves near-perfect discrimination due to the linear boundary of the synthetic risk scoring formula.
+\end{flushleft}
+\end{table*}

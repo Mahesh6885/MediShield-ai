@@ -1,0 +1,15 @@
+{
+  "benchmark_name": "MediShield AI RAG Clinical Supply Chain Benchmark v1.0",
+  "total_queries_evaluated": 10,
+  "retrieval_hit_rate_pct": 90.0,
+  "mean_reciprocal_rank_mrr": 0.8333,
+  "mean_groundedness_ratio": 0.6866,
+  "mean_citation_validity_pct": 100.0,
+  "mean_latency_ms": 15.05,
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "embedding_type": "sentence_transformers_neural",
+  "top_k": 3,
+  "total_indexed_documents": 4,
+  "total_indexed_chunks": 12,
+  "human_evaluation_status": "Pending Clinical Expert Review (Unverified placeholder ratings strictly avoided)"
+}

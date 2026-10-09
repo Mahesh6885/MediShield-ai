@@ -1,0 +1,42 @@
+[
+  {
+    "document_id": "DOC-ASHP-003",
+    "title": "ASHP Guidelines on Managing Drug Shortages in Health-System Pharmacy",
+    "source_organization": "American Society of Health-System Pharmacists (ASHP) Practice Standards",
+    "local_file_path": "backend/app/ai/rag/documents/ashp_clinical_management.md",
+    "character_count": 1880,
+    "total_chunks": 3,
+    "provenance_classification": "Project-authored structured technical synthesis derived from official publicly available organizational guidelines",
+    "verified_in_repository": true
+  },
+  {
+    "document_id": "DOC-FDA-002",
+    "title": "FDA Guidance for Industry: Risk Management Plans to Mitigate the Potential for Drug Shortages",
+    "source_organization": "United States Food and Drug Administration (FDA) Center for Drug Evaluation and Research (CDER)",
+    "local_file_path": "backend/app/ai/rag/documents/fda_shortage_mitigation.md",
+    "character_count": 1768,
+    "total_chunks": 3,
+    "provenance_classification": "Project-authored structured technical synthesis derived from official publicly available organizational guidelines",
+    "verified_in_repository": true
+  },
+  {
+    "document_id": "DOC-SOP-004",
+    "title": "MediShield AI: Hospital Materials Management & Inventory SOP",
+    "source_organization": "MediShield AI Clinical Supply Chain Operating Protocol",
+    "local_file_path": "backend/app/ai/rag/documents/medishield_sop.md",
+    "character_count": 1806,
+    "total_chunks": 3,
+    "provenance_classification": "Project-authored operational protocol",
+    "verified_in_repository": true
+  },
+  {
+    "document_id": "DOC-WHO-001",
+    "title": "WHO Technical Guidance: Prevention and Mitigation of Medicine Shortages in Health Systems",
+    "source_organization": "World Health Organization (WHO) Technical Report Series & Essential Medicines Programme",
+    "local_file_path": "backend/app/ai/rag/documents/who_shortage_guidelines.md",
+    "character_count": 2063,
+    "total_chunks": 3,
+    "provenance_classification": "Project-authored structured technical synthesis derived from official publicly available organizational guidelines",
+    "verified_in_repository": true
+  }
+]

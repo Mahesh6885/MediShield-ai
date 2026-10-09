@@ -1,0 +1,3 @@
+policy,seeds_evaluated,stockout_days_mean,stockout_days_std,stockout_rate_pct_mean,stockout_rate_pct_std,stockout_units_mean,stockout_units_std,avg_inventory_mean,avg_inventory_std,service_level_pct_mean,service_level_pct_std,ordering_cost_mean,ordering_cost_std,holding_cost_mean,holding_cost_std,total_inventory_cost_mean,total_inventory_cost_std
+Conventional Baseline,5,0.0,0.0,0.0,0.0,0.0,0.0,121.62,3.06,100.0,0.0,800.0,0.0,899.64,22.63,1699.64,22.63
+Proposed Risk-Aware,5,0.2,0.45,0.11,0.25,0.94,2.1,118.5,2.25,99.9,0.22,800.0,0.0,876.58,16.62,1676.58,16.62

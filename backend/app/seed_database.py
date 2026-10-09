@@ -1,11 +1,13 @@
 import random
 from datetime import datetime, timedelta
+from .models import User, Notification, Setting
+from .database import SessionLocal, engine
+from .models import Medicine, Supplier, Base
 
-from .database import SessionLocal
-from .models import Medicine, Supplier
-
+Base.metadata.create_all(bind=engine)
 db = SessionLocal()
 
+# Clear old data
 db.query(Medicine).delete()
 db.query(Supplier).delete()
 
@@ -33,27 +35,86 @@ suppliers = [
     "Aurobindo",
     "Mankind"
 ]
+db.query(User).delete()
+db.query(Notification).delete()
+db.query(Setting).delete()
+
+# Admin User
+admin = User(
+    full_name="Mahesh Waran",
+    email="admin@medishield.ai",
+    phone="+91 9876543210",
+    role="Hospital Administrator",
+    department="Pharmacy Department",
+    hospital="MediShield General Hospital",
+)
+
+db.add(admin)
+
+# Settings
+db.add(
+    Setting(
+        theme="light",
+        email_alert=True,
+        sms_alert=False,
+        desktop_alert=True,
+    )
+)
+
+# Notifications
+notifications = [
+    ("Critical Medicine Shortage","Insulin stock dropped below safety stock.","Critical"),
+    ("Expiry Alert","57 medicines expire within the next 60 days.","Warning"),
+    ("Supplier Delivery","Sun Pharma delivered 120 medicines today.","Info"),
+    ("AI Prediction Alert","Losartan predicted HIGH shortage risk.","Critical"),
+    ("Inventory Health","Inventory health improved to 92%.","Info"),
+]
+
+for n in notifications:
+    db.add(
+        Notification(
+            title=n[0],
+            message=n[1],
+            priority=n[2],
+            created_at=datetime.utcnow(),
+        )
+    )
+# ------------------ Medicines ------------------
 
 for i in range(500):
 
+    inventory = random.randint(5, 200)
+    demand = random.randint(20, 220)
+
     expiry = (
         datetime.today() +
-        timedelta(days=random.randint(15,365))
+        timedelta(days=random.randint(15, 365))
     ).strftime("%Y-%m-%d")
+
+    # AI Risk Logic
+    if inventory <= 30:
+        risk_level = "High"
+    elif inventory <= 80:
+        risk_level = "Medium"
+    else:
+        risk_level = "Low"
 
     med = Medicine(
         name=f"{random.choice(medicine_names)} {i+1}",
         category=random.choice(categories),
-        inventory=random.randint(5,200),
-        demand=random.randint(20,220),
-        lead_time=random.randint(1,8),
+        inventory=inventory,
+        demand=demand,
+        lead_time=random.randint(1, 8),
         supplier=random.choice(suppliers),
-        supplier_reliability=random.randint(60,99),
+        supplier_reliability=random.randint(60, 99),
         expiry_date=expiry,
-        safety_stock=random.randint(5,25)
+        safety_stock=random.randint(5, 25),
+        risk_level=risk_level      # ⭐ THIS WAS MISSING
     )
 
     db.add(med)
+
+# ------------------ Suppliers ------------------
 
 supplier_data = [
     ("Sun Pharma",95,98,2,120),
@@ -78,4 +139,4 @@ for s in supplier_data:
 db.commit()
 db.close()
 
-print("Database Seeded Successfully!")
+print("✅ Database Seeded Successfully!")

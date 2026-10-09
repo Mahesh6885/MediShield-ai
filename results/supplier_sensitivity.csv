@@ -1,0 +1,10 @@
+scenario,criterion,delta,top_supplier,top_score,kendall_tau,spearman_rho,rank_Sun Pharma,rank_Cipla,rank_Apollo Pharma,rank_Dr. Reddy's,rank_Aurobindo,rank_Mankind
+Nominal,None,0%,Sun Pharma,80.0,1.0,1.0,1,2,3,4,5,6
+reliability_-20%,reliability,-20%,Sun Pharma,77.85,1.0,1.0,1,2,3,4,5,6
+reliability_+20%,reliability,+20%,Sun Pharma,82.15,1.0,1.0,1,2,3,4,5,6
+quality_-20%,quality,-20%,Sun Pharma,78.29,1.0,1.0,1,2,3,4,5,6
+quality_+20%,quality,+20%,Sun Pharma,81.71,1.0,1.0,1,2,3,4,5,6
+cost_-20%,cost,-20%,Sun Pharma,84.0,1.0,1.0,1,2,3,4,5,6
+cost_+20%,cost,+20%,Sun Pharma,76.0,1.0,1.0,1,2,3,4,5,6
+delivery_-20%,delivery,-20%,Sun Pharma,79.29,1.0,1.0,1,2,3,4,5,6
+delivery_+20%,delivery,+20%,Sun Pharma,80.71,1.0,1.0,1,2,3,4,5,6

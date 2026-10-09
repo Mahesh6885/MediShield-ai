@@ -1,62 +1,79 @@
-import pandas as pd
-import random
+"""
+MediShield AI: XGBoost Shortage Classifier Training Pipeline
+Module: backend.app.ai.train_model
+
+Trains the production XGBoost classifier on the corrected synthetic dataset with
+domain-engineered supply chain features.
+"""
+
+import os
+import sys
 import joblib
+import pandas as pd
 from xgboost import XGBClassifier
+from sklearn.model_selection import train_test_split
 
-rows = []
+# Support both package imports and standalone script execution
+current_dir = os.path.dirname(os.path.abspath(__file__))
+app_dir = os.path.dirname(current_dir)
+backend_dir = os.path.dirname(app_dir)
+root_dir = os.path.dirname(backend_dir)
+for p in [current_dir, app_dir, backend_dir, root_dir]:
+    if p not in sys.path:
+        sys.path.insert(0, p)
 
-for _ in range(5000):
+try:
+    from .data_generation import generate_synthetic_dataset
+    from .feature_engineering import compute_domain_features, ALL_FEATURE_COLUMNS, RAW_FEATURE_COLUMNS
+except ImportError:
+    from data_generation import generate_synthetic_dataset
+    from feature_engineering import compute_domain_features, ALL_FEATURE_COLUMNS, RAW_FEATURE_COLUMNS
 
-    inventory = random.randint(5, 200)
-    demand = random.randint(20, 220)
-    lead_time = random.randint(1, 8)
-    supplier_reliability = random.randint(60, 99)
-    expiry_days = random.randint(15, 365)
-    safety_stock = random.randint(5, 25)
 
-    score = (
-        demand * 0.45
-        - inventory * 0.35
-        + lead_time * 8
-        - supplier_reliability * 0.3
-        - expiry_days * 0.05
-        + safety_stock * 2
+MODEL_PATH = os.path.join(current_dir, "xgboost_model.pkl")
+
+
+def train_production_model(save_path: str = MODEL_PATH):
+    print("Generating training dataset with corrected domain formulation (safety_stock = -2.0)...")
+    df_raw, meta = generate_synthetic_dataset(num_samples=5000, seed=42)
+
+    print("Computing domain engineered features...")
+    df_feat = compute_domain_features(df_raw)
+
+    X = df_feat[ALL_FEATURE_COLUMNS]
+    y = df_feat["shortage"]
+
+    # Stratified 80/20 train/test split to evaluate generalization
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.20, random_state=42, stratify=y
     )
 
-    shortage = 1 if score > 40 else 0
+    print("Training XGBoost Classifier...")
+    model = XGBClassifier(
+        n_estimators=150,
+        max_depth=4,
+        learning_rate=0.1,
+        random_state=42,
+        eval_metric="logloss",
+    )
+    model.fit(X_train, y_train)
 
-    rows.append([
-        inventory,
-        demand,
-        lead_time,
-        supplier_reliability,
-        expiry_days,
-        safety_stock,
-        shortage
-    ])
+    train_acc = model.score(X_train, y_train)
+    test_acc = model.score(X_test, y_test)
+    print(f"Model trained. Train Accuracy: {train_acc*100:.2f}%, Test Accuracy: {test_acc*100:.2f}%")
 
-df = pd.DataFrame(rows, columns=[
-    "inventory",
-    "demand",
-    "lead_time",
-    "supplier_reliability",
-    "expiry_days",
-    "safety_stock",
-    "shortage"
-])
+    model_artifact = {
+        "model": model,
+        "feature_names": ALL_FEATURE_COLUMNS,
+        "raw_features": RAW_FEATURE_COLUMNS,
+        "train_accuracy": train_acc,
+        "test_accuracy": test_acc,
+    }
 
-X = df.drop("shortage", axis=1)
-y = df["shortage"]
+    joblib.dump(model_artifact, save_path)
+    print(f"Model artifact successfully saved to: {save_path}")
+    return model_artifact
 
-model = XGBClassifier(
-    n_estimators=150,
-    max_depth=4,
-    learning_rate=0.1,
-    random_state=42
-)
 
-model.fit(X, y)
-
-joblib.dump(model, "app/ai/xgboost_model.pkl")
-
-print("XGBoost Model Trained Successfully!")
+if __name__ == "__main__":
+    train_production_model()

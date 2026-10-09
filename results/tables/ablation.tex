@@ -1,0 +1,20 @@
+% Table 3: Ablation Analysis Across 5 Random Seeds
+% Generated programmatically from results/ablation_results.json
+\begin{table}[htbp]
+\centering
+\caption{Ablation Analysis of Proposed XGBoost Architecture Across 5 Random Seeds}
+\label{tab:ablation}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Configuration} & \textbf{Accuracy} & \textbf{F1-Score} & \textbf{ROC-AUC} & \textbf{PR-AUC} \\
+\midrule
+A. Raw Features + Default XGBoost & 0.9668 $\pm$ 0.0040 & 0.9725 $\pm$ 0.0033 & 0.9962 $\pm$ 0.0007 & 0.9975 $\pm$ 0.0005 \\
+B. Raw + Engineered Features & 0.9708 $\pm$ 0.0045 & 0.9758 $\pm$ 0.0038 & 0.9971 $\pm$ 0.0007 & 0.9981 $\pm$ 0.0005 \\
+C. Raw + Engineered + Tuned XGBoost & 0.9750 $\pm$ 0.0044 & 0.9793 $\pm$ 0.0036 & 0.9980 $\pm$ 0.0004 & 0.9987 $\pm$ 0.0002 \\
+D. Final Model + Imbalance Handling (\texttt{scale\_pos\_weight}) & 0.9736 $\pm$ 0.0024 & 0.9780 $\pm$ 0.0020 & 0.9980 $\pm$ 0.0003 & 0.9987 $\pm$ 0.0002 \\
+\bottomrule
+\end{tabular}
+\begin{flushleft}
+\small Note: Imbalance handling maintains ROC-AUC/PR-AUC but trades off precision vs recall under ~60/40 balance, resulting in a slight reduction in raw accuracy.
+\end{flushleft}
+\end{table}

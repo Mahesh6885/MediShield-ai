@@ -1,0 +1,22 @@
+% Table 6: Direction-Aware Multi-Criteria Supplier Ranking
+% Generated programmatically from results/supplier_scores.csv
+\begin{table}[htbp]
+\centering
+\caption{Direction-Aware Supplier Ranking Under Baseline Weights}
+\label{tab:supplier_ranking}
+\begin{tabular}{lcccccr}
+\toprule
+\textbf{Supplier} & \textbf{Rel. (35\%)} & \textbf{Qual. (30\%)} & \textbf{Cost (20\%)} & \textbf{Deliv. (15\%)} & \textbf{Score} & \textbf{Rank} \\
+\midrule
+Sun Pharma & 98\% & 95\% & \$120.0 & 2 d & 80.00 & \textbf{1} \\
+Cipla & 95\% & 92\% & \$110.0 & 3 d & 61.25 & 2 \\
+Apollo Pharma & 94\% & 91\% & \$112.0 & 3 d & 52.40 & 3 \\
+Dr. Reddy's & 93\% & 90\% & \$105.0 & 4 d & 45.75 & 4 \\
+Aurobindo & 89\% & 88\% & \$95.0 & 5 d & 27.25 & 5 \\
+Mankind & 88\% & 87\% & \$100.0 & 4 d & 21.00 & 6 \\
+\bottomrule
+\end{tabular}
+\begin{flushleft}
+\small Note: Robust across 200 Monte Carlo perturbation trials (Kendall $\tau = 1.000$, Sun Pharma rank stability = 100\%).
+\end{flushleft}
+\end{table}

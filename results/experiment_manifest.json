@@ -1,0 +1,172 @@
+{
+  "manifest_version": "1.0",
+  "project": "MediShield AI",
+  "paper_id": "IEEE CEEE 2026 Paper ID 3045",
+  "execution_timestamp_utc": "2026-10-06T14:31:53.716025+00:00",
+  "git_commit": "40bfc1201bed544342ad6963c36e0b00287f691c",
+  "runtime_environment": {
+    "os": "Windows-11-10.0.26200-SP0",
+    "python_version": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "scikit_learn_version": "1.9.0",
+    "xgboost_version": "3.4.1",
+    "shap_version": "0.52.0",
+    "numpy_version": "2.5.2",
+    "pandas_version": "3.0.5",
+    "scipy_version": "1.18.1"
+  },
+  "experimental_parameters": {
+    "master_seed": 42,
+    "seeds_evaluated": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "dataset_size": 5000,
+    "train_test_split_ratio": "80/20 Stratified",
+    "raw_features": [
+      "inventory",
+      "demand",
+      "lead_time",
+      "supplier_reliability",
+      "expiry_days",
+      "safety_stock"
+    ],
+    "engineered_features": [
+      "stock_cover_ratio",
+      "safety_buffer_margin",
+      "lead_time_demand",
+      "reorder_deficit",
+      "supplier_delay_exposure"
+    ],
+    "xgboost_tuned_hyperparameters": {
+      "subsample": 0.9,
+      "n_estimators": 250,
+      "min_child_weight": 3,
+      "max_depth": 3,
+      "learning_rate": 0.15,
+      "colsample_bytree": 0.8
+    },
+    "classification_decision_threshold": 0.5,
+    "safety_stock_coefficient": -2.0,
+    "ground_truth_score_threshold": -20.0
+  },
+  "final_test_metrics_seed_42": {
+    "accuracy": 0.98,
+    "precision": 0.9818,
+    "recall_sensitivity": 0.985,
+    "specificity": 0.9724,
+    "f1_score": 0.9834,
+    "balanced_accuracy": 0.9787,
+    "roc_auc": 0.9987,
+    "pr_auc": 0.9992
+  },
+  "rag_benchmark_summary": {
+    "benchmark_name": "MediShield AI RAG Clinical Supply Chain Benchmark v1.0",
+    "total_queries_evaluated": 10,
+    "retrieval_hit_rate_pct": 90.0,
+    "mean_reciprocal_rank_mrr": 0.8333,
+    "mean_groundedness_ratio": 0.6866,
+    "mean_citation_validity_pct": 100.0,
+    "mean_latency_ms": 15.05,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embedding_type": "sentence_transformers_neural",
+    "top_k": 3,
+    "total_indexed_documents": 4,
+    "total_indexed_chunks": 12,
+    "human_evaluation_status": "Pending Clinical Expert Review (Unverified placeholder ratings strictly avoided)"
+  },
+  "inventory_simulation_summary": [
+    {
+      "policy": "Conventional Baseline",
+      "seeds_evaluated": 5,
+      "stockout_days_mean": 0.0,
+      "stockout_days_std": 0.0,
+      "stockout_rate_pct_mean": 0.0,
+      "stockout_rate_pct_std": 0.0,
+      "stockout_units_mean": 0.0,
+      "stockout_units_std": 0.0,
+      "avg_inventory_mean": 121.62,
+      "avg_inventory_std": 3.06,
+      "service_level_pct_mean": 100.0,
+      "service_level_pct_std": 0.0,
+      "ordering_cost_mean": 800.0,
+      "ordering_cost_std": 0.0,
+      "holding_cost_mean": 899.64,
+      "holding_cost_std": 22.63,
+      "total_inventory_cost_mean": 1699.64,
+      "total_inventory_cost_std": 22.63
+    },
+    {
+      "policy": "Proposed Risk-Aware",
+      "seeds_evaluated": 5,
+      "stockout_days_mean": 0.2,
+      "stockout_days_std": 0.45,
+      "stockout_rate_pct_mean": 0.11,
+      "stockout_rate_pct_std": 0.25,
+      "stockout_units_mean": 0.94,
+      "stockout_units_std": 2.1,
+      "avg_inventory_mean": 118.5,
+      "avg_inventory_std": 2.25,
+      "service_level_pct_mean": 99.9,
+      "service_level_pct_std": 0.22,
+      "ordering_cost_mean": 800.0,
+      "ordering_cost_std": 0.0,
+      "holding_cost_mean": 876.58,
+      "holding_cost_std": 16.62,
+      "total_inventory_cost_mean": 1676.58,
+      "total_inventory_cost_std": 16.62
+    }
+  ],
+  "supplier_nominal_summary": [
+    {
+      "name": "Sun Pharma",
+      "composite_score": 80.0,
+      "rank": 1
+    },
+    {
+      "name": "Cipla",
+      "composite_score": 61.25,
+      "rank": 2
+    },
+    {
+      "name": "Apollo Pharma",
+      "composite_score": 52.4,
+      "rank": 3
+    },
+    {
+      "name": "Dr. Reddy's",
+      "composite_score": 45.75,
+      "rank": 4
+    },
+    {
+      "name": "Aurobindo",
+      "composite_score": 27.25,
+      "rank": 5
+    },
+    {
+      "name": "Mankind",
+      "composite_score": 21.0,
+      "rank": 6
+    }
+  ],
+  "output_artifacts": {
+    "dataset_csv": "results/synthetic_medicine_dataset.csv",
+    "dataset_metadata_json": "results/dataset_metadata.json",
+    "preprocessing_report": "results/preprocessing_report.md",
+    "feature_engineering_report": "results/feature_engineering_report.md",
+    "hyperparameter_search_json": "results/hyperparameter_search.json",
+    "model_comparison_csv": "results/model_comparison.csv",
+    "ablation_results_csv": "results/ablation_results.csv",
+    "confusion_matrix_json": "results/confusion_matrix.json",
+    "shap_global_csv": "results/shap_global.csv",
+    "shap_local_cases_csv": "results/shap_local_cases.csv",
+    "supplier_scores_csv": "results/supplier_scores.csv",
+    "supplier_sensitivity_csv": "results/supplier_sensitivity.csv",
+    "inventory_simulation_csv": "results/inventory_simulation.csv",
+    "inventory_comparison_csv": "results/inventory_comparison.csv",
+    "rag_evaluation_csv": "results/rag_evaluation.csv",
+    "rag_evaluation_summary_json": "results/rag_evaluation_summary.json"
+  }
+}

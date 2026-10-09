@@ -1,0 +1,242 @@
+[
+  {
+    "case_type": "True Positive (High Risk)",
+    "sample_index": 18,
+    "true_label": 1,
+    "predicted_label": 1,
+    "predicted_probability": 1.0,
+    "top_contributing_features": [
+      {
+        "feature": "stock_cover_ratio",
+        "feature_value": 0.2441314439374909,
+        "shap_impact": 4.2669
+      },
+      {
+        "feature": "lead_time_demand",
+        "feature_value": 49.699999999999996,
+        "shap_impact": 3.9896
+      },
+      {
+        "feature": "demand",
+        "feature_value": 213.0,
+        "shap_impact": 3.3105
+      },
+      {
+        "feature": "lead_time",
+        "feature_value": 7.0,
+        "shap_impact": 2.5097
+      },
+      {
+        "feature": "safety_stock",
+        "feature_value": 20.0,
+        "shap_impact": -2.0145
+      }
+    ],
+    "all_features": {
+      "inventory": 52.0,
+      "demand": 213.0,
+      "lead_time": 7.0,
+      "supplier_reliability": 72.0,
+      "expiry_days": 150.0,
+      "safety_stock": 20.0,
+      "stock_cover_ratio": 0.2441314439374909,
+      "safety_buffer_margin": 0.15023473473076362,
+      "lead_time_demand": 49.699999999999996,
+      "reorder_deficit": 17.69999999999999,
+      "supplier_delay_exposure": 196.0
+    },
+    "all_shap_values": {
+      "inventory": 0.9122,
+      "demand": 3.3105,
+      "lead_time": 2.5097,
+      "supplier_reliability": 0.1706,
+      "expiry_days": 0.5791,
+      "safety_stock": -2.0145,
+      "stock_cover_ratio": 4.2669,
+      "safety_buffer_margin": 1.3987,
+      "lead_time_demand": 3.9896,
+      "reorder_deficit": 0.9817,
+      "supplier_delay_exposure": 1.0903
+    }
+  },
+  {
+    "case_type": "True Negative (Low Risk)",
+    "sample_index": 59,
+    "true_label": 0,
+    "predicted_label": 0,
+    "predicted_probability": 0.0,
+    "top_contributing_features": [
+      {
+        "feature": "safety_stock",
+        "feature_value": 25.0,
+        "shap_impact": -4.2596
+      },
+      {
+        "feature": "stock_cover_ratio",
+        "feature_value": 4.547617964852865,
+        "shap_impact": -3.2414
+      },
+      {
+        "feature": "lead_time_demand",
+        "feature_value": 4.199999999999999,
+        "shap_impact": -2.1463
+      },
+      {
+        "feature": "safety_buffer_margin",
+        "feature_value": 3.952380011338092,
+        "shap_impact": -1.8982
+      },
+      {
+        "feature": "demand",
+        "feature_value": 42.0,
+        "shap_impact": -1.8392
+      }
+    ],
+    "all_features": {
+      "inventory": 191.0,
+      "demand": 42.0,
+      "lead_time": 3.0,
+      "supplier_reliability": 80.0,
+      "expiry_days": 317.0,
+      "safety_stock": 25.0,
+      "stock_cover_ratio": 4.547617964852865,
+      "safety_buffer_margin": 3.952380011338092,
+      "lead_time_demand": 4.199999999999999,
+      "reorder_deficit": -161.8,
+      "supplier_delay_exposure": 60.0
+    },
+    "all_shap_values": {
+      "inventory": -1.0656,
+      "demand": -1.8392,
+      "lead_time": -1.7386,
+      "supplier_reliability": -0.0995,
+      "expiry_days": -1.4629,
+      "safety_stock": -4.2596,
+      "stock_cover_ratio": -3.2414,
+      "safety_buffer_margin": -1.8982,
+      "lead_time_demand": -2.1463,
+      "reorder_deficit": -1.5978,
+      "supplier_delay_exposure": -0.2477
+    }
+  },
+  {
+    "case_type": "False Positive (Type I Error)",
+    "sample_index": 90,
+    "true_label": 0,
+    "predicted_label": 1,
+    "predicted_probability": 0.8491,
+    "top_contributing_features": [
+      {
+        "feature": "safety_stock",
+        "feature_value": 7.0,
+        "shap_impact": 5.5975
+      },
+      {
+        "feature": "lead_time",
+        "feature_value": 2.0,
+        "shap_impact": -1.7872
+      },
+      {
+        "feature": "lead_time_demand",
+        "feature_value": 8.133333333333333,
+        "shap_impact": -1.0749
+      },
+      {
+        "feature": "supplier_delay_exposure",
+        "feature_value": 20.0,
+        "shap_impact": -1.0692
+      },
+      {
+        "feature": "expiry_days",
+        "feature_value": 262.0,
+        "shap_impact": -0.9844
+      }
+    ],
+    "all_features": {
+      "inventory": 111.0,
+      "demand": 122.0,
+      "lead_time": 2.0,
+      "supplier_reliability": 90.0,
+      "expiry_days": 262.0,
+      "safety_stock": 7.0,
+      "stock_cover_ratio": 0.9098359909970499,
+      "safety_buffer_margin": 0.8524589465197585,
+      "lead_time_demand": 8.133333333333333,
+      "reorder_deficit": -95.86666666666667,
+      "supplier_delay_exposure": 20.0
+    },
+    "all_shap_values": {
+      "inventory": -0.159,
+      "demand": -0.3,
+      "lead_time": -1.7872,
+      "supplier_reliability": -0.2086,
+      "expiry_days": -0.9844,
+      "safety_stock": 5.5975,
+      "stock_cover_ratio": 0.3521,
+      "safety_buffer_margin": 0.8226,
+      "lead_time_demand": -1.0749,
+      "reorder_deficit": 0.1036,
+      "supplier_delay_exposure": -1.0692
+    }
+  },
+  {
+    "case_type": "False Negative (Type II Error)",
+    "sample_index": 0,
+    "true_label": 1,
+    "predicted_label": 0,
+    "predicted_probability": 0.2309,
+    "top_contributing_features": [
+      {
+        "feature": "safety_stock",
+        "feature_value": 6.0,
+        "shap_impact": 5.4996
+      },
+      {
+        "feature": "stock_cover_ratio",
+        "feature_value": 2.613635769628234,
+        "shap_impact": -3.4019
+      },
+      {
+        "feature": "safety_buffer_margin",
+        "feature_value": 2.477272164256326,
+        "shap_impact": -2.6139
+      },
+      {
+        "feature": "expiry_days",
+        "feature_value": 299.0,
+        "shap_impact": -1.473
+      },
+      {
+        "feature": "lead_time",
+        "feature_value": 6.0,
+        "shap_impact": 1.2907
+      }
+    ],
+    "all_features": {
+      "inventory": 115.0,
+      "demand": 44.0,
+      "lead_time": 6.0,
+      "supplier_reliability": 68.0,
+      "expiry_days": 299.0,
+      "safety_stock": 6.0,
+      "stock_cover_ratio": 2.613635769628234,
+      "safety_buffer_margin": 2.477272164256326,
+      "lead_time_demand": 8.799999999999999,
+      "reorder_deficit": -100.2,
+      "supplier_delay_exposure": 192.0
+    },
+    "all_shap_values": {
+      "inventory": -0.143,
+      "demand": -1.1771,
+      "lead_time": 1.2907,
+      "supplier_reliability": 0.2486,
+      "expiry_days": -1.473,
+      "safety_stock": 5.4996,
+      "stock_cover_ratio": -3.4019,
+      "safety_buffer_margin": -2.6139,
+      "lead_time_demand": -1.1391,
+      "reorder_deficit": 0.1088,
+      "supplier_delay_exposure": 1.162
+    }
+  }
+]

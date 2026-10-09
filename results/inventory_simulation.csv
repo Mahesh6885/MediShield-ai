@@ -1,0 +1,11 @@
+seed,policy,rop,safety_stock,stockout_days,stockout_rate_pct,stockout_units,orders_placed,avg_inventory,service_level_pct,ordering_cost,holding_cost,total_inventory_cost
+10,Conventional Baseline,32.0,12.0,0,0.0,0.0,4,117.42,100.0,800.0,868.56,1668.56
+10,Proposed Risk-Aware,28.2,8.2,1,0.56,4.7,4,116.53,99.5,800.0,862.03,1662.03
+20,Conventional Baseline,32.0,12.0,0,0.0,0.0,4,120.06,100.0,800.0,888.09,1688.09
+20,Proposed Risk-Aware,28.2,8.2,0,0.0,0.0,4,116.38,100.0,800.0,860.9,1660.9
+30,Conventional Baseline,32.0,12.0,0,0.0,0.0,4,122.15,100.0,800.0,903.59,1703.59
+30,Proposed Risk-Aware,28.2,8.2,0,0.0,0.0,4,118.48,100.0,800.0,876.4,1676.4
+40,Conventional Baseline,32.0,12.0,0,0.0,0.0,4,122.93,100.0,800.0,909.32,1709.32
+40,Proposed Risk-Aware,28.2,8.2,0,0.0,0.0,4,119.25,100.0,800.0,882.13,1682.13
+50,Conventional Baseline,32.0,12.0,0,0.0,0.0,4,125.54,100.0,800.0,928.62,1728.62
+50,Proposed Risk-Aware,28.2,8.2,0,0.0,0.0,4,121.86,100.0,800.0,901.42,1701.42

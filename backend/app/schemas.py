@@ -1,5 +1,6 @@
 from pydantic import BaseModel
-
+from datetime import datetime
+from typing import Optional
 class MedicineBase(BaseModel):
     name: str
     category: str
@@ -25,3 +26,38 @@ class MedicineResponse(MedicineBase):
 
     class Config:
         from_attributes = True
+# ================= USER =================
+
+class UserUpdate(BaseModel):
+    full_name: str
+    email: str
+    phone: str
+    department: str
+    hospital: str
+
+class PasswordUpdate(BaseModel):
+    current_password: str
+    new_password: str
+
+
+# ================= NOTIFICATION =================
+
+class NotificationResponse(BaseModel):
+    id: int
+    title: str
+    message: str
+    priority: str
+    is_read: bool
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
+# ================= SETTINGS =================
+
+class SettingUpdate(BaseModel):
+    theme: str
+    email_alert: bool
+    sms_alert: bool
+    desktop_alert: bool

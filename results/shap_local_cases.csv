@@ -1,0 +1,5 @@
+case_type,sample_index,true_label,predicted_label,predicted_probability,top_feature_1,top_feature_2,top_feature_3
+True Positive (High Risk),18,1,1,1.0,stock_cover_ratio (+4.27),lead_time_demand (+3.99),demand (+3.31)
+True Negative (Low Risk),59,0,0,0.0,safety_stock (-4.26),stock_cover_ratio (-3.24),lead_time_demand (-2.15)
+False Positive (Type I Error),90,0,1,0.8491,safety_stock (+5.60),lead_time (-1.79),lead_time_demand (-1.07)
+False Negative (Type II Error),0,1,0,0.2309,safety_stock (+5.50),stock_cover_ratio (-3.40),safety_buffer_margin (-2.61)

@@ -1,6 +1,42 @@
 from sqlalchemy import Column, Integer, Float, String
 from .database import Base
+from sqlalchemy import Column, Integer, String, Boolean, DateTime
+from datetime import datetime
 
+
+class User(Base):
+    __tablename__ = "users"
+
+    id = Column(Integer, primary_key=True, index=True)
+    full_name = Column(String)
+    email = Column(String, unique=True)
+    phone = Column(String)
+    role = Column(String)
+    department = Column(String)
+    hospital = Column(String)
+    profile_image = Column(String, default="")
+    password = Column(String, default="admin123")
+
+
+class Notification(Base):
+    __tablename__ = "notifications"
+
+    id = Column(Integer, primary_key=True, index=True)
+    title = Column(String)
+    message = Column(String)
+    priority = Column(String)      # Critical / Warning / Info
+    is_read = Column(Boolean, default=False)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+
+class Setting(Base):
+    __tablename__ = "settings"
+
+    id = Column(Integer, primary_key=True, index=True)
+    theme = Column(String, default="light")
+    email_alert = Column(Boolean, default=True)
+    sms_alert = Column(Boolean, default=False)
+    desktop_alert = Column(Boolean, default=True)
 class Medicine(Base):
     __tablename__ = "medicines"
 

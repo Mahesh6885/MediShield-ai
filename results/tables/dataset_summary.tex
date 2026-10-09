@@ -1,0 +1,21 @@
+% Table 1: Summary of Synthetic Medicine Shortage Dataset
+% Generated programmatically from results/dataset_metadata.json
+\begin{table}[htbp]
+\centering
+\caption{Summary of Synthetic Medicine Shortage Dataset}
+\label{tab:dataset_summary}
+\begin{tabular}{llr}
+\toprule
+\textbf{Attribute} & \textbf{Specification / Parameter} & \textbf{Proportion / Notes} \\
+\midrule
+Data Source & Synthetic supply-chain risk formulation & Domain-informed \\
+Total Observations & 5000 & 100.0\% \\
+No Shortage ($y = 0$) & 1996 & 39.92\% \\
+Shortage ($y = 1$) & 3004 & 60.08\% \\
+Input Features (Raw) & 6 & Numerical discrete/continuous \\
+Engineered Features & 5 & Domain supply-chain ratios \\
+Decision Threshold & $\text{score} > -20.0 \implies 1$, else $0$ & Protective safety stock calibration \\
+Train / Test Protocol & 80\% / 20\% Stratified (Seeds 0--4) & 4,000 train / 1,000 test \\
+\bottomrule
+\end{tabular}
+\end{table}

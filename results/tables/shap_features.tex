@@ -1,0 +1,27 @@
+% Table 5: Global SHAP Feature Importance & Correlation Direction
+% Generated programmatically from results/shap_global.csv
+\begin{table}[htbp]
+\centering
+\caption{Global SHAP Feature Attributions and Directionality Analysis}
+\label{tab:shap_features}
+\begin{tabular}{lcccl}
+\toprule
+\textbf{Feature} & \textbf{Mean $|\text{SHAP}|$} & \textbf{Corr. $r$} & \textbf{Direction} & \textbf{Domain Interpretation} \\
+\midrule
+\texttt{safety\_stock} & 2.8731 & -0.9916 & Negative (-) & Protective (lowers predicted risk) \\
+\texttt{stock\_cover\_ratio} & 2.8033 & -0.7290 & Negative (-) & Protective (lowers predicted risk) \\
+\texttt{lead\_time\_demand} & 2.3647 & +0.9223 & Positive (+) & Risk-elevating (raises predicted risk) \\
+\texttt{lead\_time} & 1.8991 & +0.9517 & Positive (+) & Risk-elevating (raises predicted risk) \\
+\texttt{demand} & 1.6985 & +0.9497 & Positive (+) & Risk-elevating (raises predicted risk) \\
+\texttt{expiry\_days} & 1.2903 & -0.9845 & Negative (-) & Protective (lowers predicted risk) \\
+\texttt{safety\_buffer\_margin} & 1.1648 & -0.8592 & Negative (-) & Protective (lowers predicted risk) \\
+\texttt{reorder\_deficit} & 0.8246 & +0.9128 & Positive (+) & Risk-elevating (raises predicted risk) \\
+\texttt{inventory} & 0.7817 & -0.9610 & Negative (-) & Protective (lowers predicted risk) \\
+\texttt{supplier\_delay\_exposure} & 0.7279 & +0.9275 & Positive (+) & Risk-elevating (raises predicted risk) \\
+\texttt{supplier\_reliability} & 0.2032 & -0.9414 & Negative (-) & Protective (lowers predicted risk) \\
+\bottomrule
+\end{tabular}
+\begin{flushleft}
+\small Note: Safety stock exhibits negative SHAP attribution ($r = -0.9916$), empirically validating alignment with clinical supply chain protective buffering.
+\end{flushleft}
+\end{table}

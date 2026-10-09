@@ -1,0 +1,23 @@
+% Table 8: RAG Assistant Quantitative Evaluation Benchmark
+% Generated programmatically from results/rag_evaluation_summary.json
+\begin{table}[htbp]
+\centering
+\caption{Quantitative RAG Retrieval and Groundedness Evaluation Benchmark}
+\label{tab:rag_evaluation}
+\begin{tabular}{llr}
+\toprule
+\textbf{Evaluation Metric} & \textbf{Empirical Score} & \textbf{Target / Benchmark} \\
+\midrule
+Retrieval Hit Rate & 90.00\% & Top-3 relevance \\
+Mean Reciprocal Rank (MRR) & 0.8333 & First-rank precision \\
+Answer Groundedness Ratio & 68.66\% & Evidence overlap \\
+Citation Validity Rate & 100.00\% & Valid chunk pointers \\
+Mean Query Latency & 15.05 ms & Local execution \\
+Indexed Guidelines & 4 Documents (12 Chunks) & WHO, FDA, ASHP, SOP \\
+Human Expert Rating & \textit{Pending Review} & Non-fabricated status \\
+\bottomrule
+\end{tabular}
+\begin{flushleft}
+\small Note: Extractive evidence synthesizer operating on MiniLM-L6-v2 embeddings. Clinical human ratings are marked pending expert review.
+\end{flushleft}
+\end{table}
